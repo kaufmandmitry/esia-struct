@@ -26,7 +26,12 @@ use Vanta\Integration\Esia\Struct\Bridge\Serializer\Attribute\DiscriminatorDefau
     mapping: [
         '1' => ElectronicWorkbookV3HiringEvent::class,
         '2' => ElectronicWorkbookV3ReassignmentEvent::class,
+        '3' => ElectronicWorkbookV3RenamingEvent::class,
+        '4' => ElectronicWorkbookV3EstablishmentEvent::class,
         '5' => ElectronicWorkbookV3DismissalEvent::class,
+        '6' => ElectronicWorkbookV3ProhibitionEvent::class,
+        '7' => ElectronicWorkbookV3SuspensionEvent::class,
+        '8' => ElectronicWorkbookV3ResumptionEvent::class,
     ],
 )]
 abstract readonly class ElectronicWorkbookV3Event
