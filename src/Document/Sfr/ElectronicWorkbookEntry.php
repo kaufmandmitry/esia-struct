@@ -24,9 +24,15 @@ use Vanta\Integration\Esia\Struct\Bridge\Serializer\Attribute\DiscriminatorDefau
     mapping: [
         1 => ElectronicWorkbookHiringEntry::class,
         2 => ElectronicWorkbookReassignmentEntry::class,
+        3 => ElectronicWorkbookRenamingEntry::class,
+        4 => ElectronicWorkbookEstablishmentEntry::class,
         5 => ElectronicWorkbookDismissalEntry::class,
+        6 => ElectronicWorkbookProhibitionEntry::class,
+        7 => ElectronicWorkbookSuspensionEntry::class,
+        8 => ElectronicWorkbookResumptionEntry::class,
     ],
 )]
+
 abstract readonly class ElectronicWorkbookEntry
 {
     public function __construct(
@@ -39,14 +45,39 @@ abstract readonly class ElectronicWorkbookEntry
         return ElectronicWorkbookEntryType::HIRING == $this->type;
     }
 
+    final public function isReassignment(): bool
+    {
+        return ElectronicWorkbookEntryType::REASSIGNMENT == $this->type;
+    }
+
+    final public function isRenaming(): bool
+    {
+        return ElectronicWorkbookEntryType::RENAMING == $this->type;
+    }
+
+    final public function isEstablishment(): bool
+    {
+        return ElectronicWorkbookEntryType::ESTABLISHMENT == $this->type;
+    }
+
     final public function isDismissal(): bool
     {
         return ElectronicWorkbookEntryType::DISMISSAL == $this->type;
     }
 
-    final public function isReassignment(): bool
+    final public function isProhibition(): bool
     {
-        return ElectronicWorkbookEntryType::REASSIGNMENT == $this->type;
+        return ElectronicWorkbookEntryType::PROHIBITION == $this->type;
+    }
+
+    final public function isSuspension(): bool
+    {
+        return ElectronicWorkbookEntryType::SUSPENSION == $this->type;
+    }
+
+    final public function isResumption(): bool
+    {
+        return ElectronicWorkbookEntryType::RESUMPTION == $this->type;
     }
 
     final public function isUnknown(): bool

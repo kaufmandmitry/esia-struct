@@ -31,7 +31,7 @@ final readonly class ElectronicWorkbookReassignmentEntry extends ElectronicWorkb
         #[Context(denormalizationContext: [DateTimeNormalizer::FORMAT_KEY => '!d.m.Y'])]
         public DateTimeImmutable $date,
         public ElectronicWorkbookOrganizationInfo $organization,
-        public ?string $position,
+        public ?string $position = null,
         public bool $isPartTimeJob = false,
     ) {
         parent::__construct(ElectronicWorkbookEntryType::REASSIGNMENT);
