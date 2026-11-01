@@ -19,6 +19,9 @@ use Symfony\Component\Uid\Uuid;
  */
 final readonly class ElectronicWorkbookSuspensionEntry extends ElectronicWorkbookEntry
 {
+    /**
+     * @param non-empty-string|null $position
+     */
     public function __construct(
         Uuid $id,
         DateTimeImmutable $date,

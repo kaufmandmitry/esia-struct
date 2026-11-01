@@ -21,6 +21,9 @@ use Vanta\Integration\Esia\Struct\Document\InnNumber;
  */
 final readonly class ElectronicWorkbookUnknownEntry extends ElectronicWorkbookEntry
 {
+    /**
+     * @param non-empty-string|null $position
+     */
     public function __construct(
         Uuid $id = new NilUuid(),
         DateTimeImmutable $date = new DateTimeImmutable(),
