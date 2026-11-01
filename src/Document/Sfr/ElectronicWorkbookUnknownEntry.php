@@ -11,8 +11,10 @@ declare(strict_types=1);
 
 namespace Vanta\Integration\Esia\Struct\Document\Sfr;
 
-use Symfony\Component\Serializer\Attribute\SerializedName;
+use DateTimeImmutable;
+use Symfony\Component\Uid\NilUuid;
 use Symfony\Component\Uid\Uuid;
+use Vanta\Integration\Esia\Struct\Document\InnNumber;
 
 /**
  * @deprecated
@@ -20,9 +22,21 @@ use Symfony\Component\Uid\Uuid;
 final readonly class ElectronicWorkbookUnknownEntry extends ElectronicWorkbookEntry
 {
     public function __construct(
-        #[SerializedName('uuid')]
-        public Uuid $id,
+        Uuid $id = new NilUuid(),
+        DateTimeImmutable $date = new DateTimeImmutable(),
+        ElectronicWorkbookOrganizationInfo $organization = new ElectronicWorkbookOrganizationInfo(
+            orgName: 'Имя организации',
+            inn: new InnNumber('0000000000'),
+        ),
+        bool $isPartTimeJob = false,
+        public ?string $position = null,
     ) {
-        parent::__construct(ElectronicWorkbookEntryType::UNKNOWN);
+        parent::__construct(
+            type: ElectronicWorkbookEntryType::UNKNOWN,
+            id: $id,
+            date: $date,
+            organization: $organization,
+            isPartTimeJob: $isPartTimeJob,
+        );
     }
 }
