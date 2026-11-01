@@ -27,7 +27,7 @@ final readonly class ElectronicWorkbookSuspensionEntry extends ElectronicWorkboo
         DateTimeImmutable $date,
         ElectronicWorkbookOrganizationInfo $organization,
         bool $isPartTimeJob = false,
-        public ?string $position = null,
+        ?string $position = null,
     ) {
         parent::__construct(
             type: ElectronicWorkbookEntryType::SUSPENSION,
@@ -35,6 +35,7 @@ final readonly class ElectronicWorkbookSuspensionEntry extends ElectronicWorkboo
             date: $date,
             organization: $organization,
             isPartTimeJob: $isPartTimeJob,
+            position: $position,
         );
     }
 }

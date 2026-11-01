@@ -32,7 +32,7 @@ final readonly class ElectronicWorkbookUnknownEntry extends ElectronicWorkbookEn
             inn: new InnNumber('0000000000'),
         ),
         bool $isPartTimeJob = false,
-        public ?string $position = null,
+        ?string $position = null,
     ) {
         parent::__construct(
             type: ElectronicWorkbookEntryType::UNKNOWN,
@@ -40,6 +40,7 @@ final readonly class ElectronicWorkbookUnknownEntry extends ElectronicWorkbookEn
             date: $date,
             organization: $organization,
             isPartTimeJob: $isPartTimeJob,
+            position: $position,
         );
     }
 }

@@ -27,7 +27,7 @@ final readonly class ElectronicWorkbookProhibitionEntry extends ElectronicWorkbo
         DateTimeImmutable $date,
         ElectronicWorkbookOrganizationInfo $organization,
         bool $isPartTimeJob = false,
-        public ?string $position = null,
+        ?string $position = null,
     ) {
         parent::__construct(
             type: ElectronicWorkbookEntryType::PROHIBITION,
@@ -35,6 +35,7 @@ final readonly class ElectronicWorkbookProhibitionEntry extends ElectronicWorkbo
             date: $date,
             organization: $organization,
             isPartTimeJob: $isPartTimeJob,
+            position: $position,
         );
     }
 }

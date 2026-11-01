@@ -48,6 +48,7 @@ abstract readonly class ElectronicWorkbookEntry
         public DateTimeImmutable $date,
         public ElectronicWorkbookOrganizationInfo $organization,
         public bool $isPartTimeJob = false,
+        public ?string $position = null,
     ) {
     }
 

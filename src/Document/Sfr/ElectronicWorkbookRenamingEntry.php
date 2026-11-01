@@ -27,7 +27,7 @@ final readonly class ElectronicWorkbookRenamingEntry extends ElectronicWorkbookE
         DateTimeImmutable $date,
         ElectronicWorkbookOrganizationInfo $organization,
         bool $isPartTimeJob = false,
-        public ?string $position = null,
+        ?string $position = null,
     ) {
         parent::__construct(
             type: ElectronicWorkbookEntryType::RENAMING,
@@ -35,6 +35,7 @@ final readonly class ElectronicWorkbookRenamingEntry extends ElectronicWorkbookE
             date: $date,
             organization: $organization,
             isPartTimeJob: $isPartTimeJob,
+            position: $position,
         );
     }
 }
